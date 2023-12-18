@@ -31,10 +31,10 @@ class ApiModel extends Model
             : $response = ['code' => 400, 'status' => 'error'];
     }
 
-    public function validationAccess($acces_token)
+    public function validationAccess($access_token)
     {
-        $access = $this->db->table('m_apiservice_client_token')
-        ->where('access_token', $acces_token)
+        $access = $this->db->table('m_apiservice_access_token')
+        ->where('access_token', $access_token)
         ->get()->getRow();
 
         return $access
