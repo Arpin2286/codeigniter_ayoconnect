@@ -41,10 +41,4 @@ class ApiModel extends Model
             ? $response = ['code' => 200, 'status' => 'success']
             : $response = ['code' => 400, 'status' => 'error'];
     }
-
-    public function validateClient()
-    {
-        # code...
-    }
-
 }
