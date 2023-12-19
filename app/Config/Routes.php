@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$routes->get('/login', 'Auth\Login::login');
+$routes->post('/login', 'Auth\Login::login');
 $routes->group('api', function ($routes)
 {
     $routes->post('inquiry', 'Api\InquiryController::inquiry');

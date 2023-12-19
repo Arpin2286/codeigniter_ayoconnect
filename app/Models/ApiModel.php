@@ -23,12 +23,11 @@ class ApiModel extends Model
         ->where('grant_type', $grant_type)
         ->where('username', $username)
         ->where('password', $password)
-        ->where('password', $password)
         ->get()->getRow();
 
         return $user
-            ? $response = ['code' => 200, 'status' => 'success']
-            : $response = ['code' => 400, 'status' => 'error'];
+            ? $response = ['code' => 200, 'status' => 'success', 'message' => $user]
+            : $response = ['code' => 400, 'status' => 'error', 'message' => $user];
     }
 
     public function validationAccess($access_token)
